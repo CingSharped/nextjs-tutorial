@@ -39,6 +39,8 @@ export default function Timer(){
             <br></br>
             <button className="btn btn-primary m-3" onClick={() => handleTimeLimit(true)}>increase time</button>
             <button className="btn btn-primary m-3" onClick={() => handleTimeLimit(false)}>decrease time</button>
+            <br></br>
+            <a href="/">Back to home</a>
             </div>
         </div>
     );

@@ -1,1 +1,1 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+This is what I created following the next tutorial annd then adding my own, timer component.
