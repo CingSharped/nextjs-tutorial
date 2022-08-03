@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
 
-export default function Timer(){
+const Timer = () => {
     const [timeLimit = 30, setTimeLimit] = useState();
     const [time, setTime] = useState(timeLimit);
     const [timerOn, setTimerOn] = useState(false);
@@ -45,3 +45,5 @@ export default function Timer(){
         </div>
     );
 }
+
+export default Timer;

@@ -20,12 +20,15 @@ export default function Home({allPostsData}) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>Hi, my names Chris and I am trying to create something to make working out and being healthier more fun</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-
-          <a href='/timer'>Check out my Timer!</a>
-        </p>
+        <br></br>
+        <h3><a href='/timer'>Check out my Timer</a></h3>
+        <br></br>
+        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="christopher-sharpe-4b653980" data-version="v1">
+          <h1>My LinkedIn</h1>
+          <br></br>
+          <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+          <a class="badge-base__link LI-simple-link" href="https://uk.linkedin.com/in/christopher-sharpe-4b653980?trk=profile-badge"></a>
+        </div>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
