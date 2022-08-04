@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
-import LinkedIn from '../components/linkedIn';
+import Link from 'next/link';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -21,9 +21,8 @@ export default function Home({allPostsData}) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>Hi, my names Chris and I am trying to create something to make working out and being healthier more fun</p>
-        <LinkedIn />
         <br></br>
-        <h3><a href='/timer'>Check out my Timer</a></h3>
+        <h3><Link href='/timer'><a >Check out my Timer</a></Link></h3>
         <br></br>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>

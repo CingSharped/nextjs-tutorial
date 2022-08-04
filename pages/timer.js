@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
+import Link from "next/link";
 
 const Timer = () => {
     const [timeLimit = 30, setTimeLimit] = useState();
     const [time, setTime] = useState(timeLimit);
     const [timerOn, setTimerOn] = useState(false);
+    //const timerLoop = document.getElementById('timerLoop');
 
 
     function handleTimerOn(){
@@ -20,8 +22,11 @@ const Timer = () => {
     }
 
     if (time <= 0) {
+        // Check if loop checkbox is checked
+        // if checked then...
         setTime(timeLimit);
         }
+        // If not checked, stop timer, set timerOn to false
 
     function handleTimeLimit(increment){
         setTimeLimit(increment ? timeLimit + 5 : (timeLimit - 5) <= 0 ? timeLimit : timeLimit - 5);
@@ -37,10 +42,11 @@ const Timer = () => {
             <p className="card-text">Time length: {timeLimit}</p>
             <button className="btn btn-primary m-3" onClick={() => handleTimerOn()}>{timerOn ? 'Pause' : 'Start'}</button>
             <br></br>
+            {/* insert loop checkbox to set timer loop behaviour*/}
             <button className="btn btn-primary m-3" onClick={() => handleTimeLimit(true)}>increase time</button>
             <button className="btn btn-primary m-3" onClick={() => handleTimeLimit(false)}>decrease time</button>
             <br></br>
-            <a href="/">Back to home</a>
+            <Link href="/"><a>Back to home</a></Link>
             </div>
         </div>
     );
