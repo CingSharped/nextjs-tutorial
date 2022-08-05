@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import 'bootstrap/dist/css/bootstrap.css';
+import { useState } from "react";
 import Link from "next/link";
 
 const Timer = () => {
