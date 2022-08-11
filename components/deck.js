@@ -1,4 +1,5 @@
 export default function Deck({currentDeck}) {
+
     return (
         <div>
             {currentDeck.map((card) => {

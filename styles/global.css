@@ -40,13 +40,16 @@ img {
 .cardStyling {
   background-color: darkgray;
   border: solid black 5px;
+  border-radius: 10px;
   text-align: center;
   padding: auto;
   width: 300px;
 }
 .deckStyling {
   background-color: grey;
-  border: solid black 2px;
+  border: solid black 5px;
+  border-radius: 10px;
   text-align: center;
-  width: 300px;
+  padding: auto;
+  width: 400px;
 }

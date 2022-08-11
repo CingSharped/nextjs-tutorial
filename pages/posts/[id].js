@@ -1,9 +1,12 @@
 import Layout from '../../components/layout';
+import Head from 'next/head';
 
 export default function Post({ postData }) {
     return (
       <Layout>
-        {postData.title}
+        <Head>
+          <title>{postData.title}</title>
+        </Head>
         <br />
         {postData.id}
         <br />
@@ -11,10 +14,13 @@ export default function Post({ postData }) {
       </Layout>
     );
   }
+
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
 export async function getStaticProps({ params }) {
-  const postData = getPostData(params.id);
+  // Add the "await" keyword like this:
+  const postData = await getPostData(params.id);
+  // ...
   return {
     props: {
       postData,
