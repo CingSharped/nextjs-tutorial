@@ -1,6 +1,7 @@
 import Card from "../components/card";
 import SavedDecksDisplay from "../components/savedDecksDisplay";
 import Link from "next/link";
+import { deck } from "../components/deck";
 
 const sampleCard1 = {
    title: "Card One",
@@ -19,17 +20,17 @@ const sampleCard4 = {
    description: "this is a Yu Gi Oh! card description biatch"
 }
 
+const sampleDeck = new Deck("Sample Deck 1", "Chris");
+sampleDeck.addToMainDeck(sampleCard1);
+sampleDeck.addToMainDeck(sampleCard2);
+
 const sampleDeck1 = {
-   name: "Sample Deck 1",
-   cards: [
+   name: "Sample DeckDisplay 1",
+   mainCards: [
       sampleCard1, sampleCard2, sampleCard3,
-   ]
-}
-const sampleDeck2 = {
-   name: "Sample Deck 2",
-   cards: [
-      sampleCard4, sampleCard3, sampleCard2,
-   ]
+   ],
+   extraCards: [sampleCard2, sampleCard4],
+   sideCards: [sampleCard1, sampleCard4]
 }
 
 const sampleDeckCollection = [

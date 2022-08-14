@@ -3,6 +3,7 @@ import Layout, { siteTitle } from '../components/layout';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
+import Date from '../components/date';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -20,10 +21,21 @@ export default function Home({allPostsData}) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>Hi, my names Chris and I am trying to create something to make working out and being healthier more fun</p>
+        <p>
+          Hi, my names Chris and I am trying to create something to make working
+          out and being healthier more fun
+        </p>
         <br></br>
-        <h3><Link href='/timer'><a >Check out my Timer</a></Link></h3>
-        <h3><Link href='/readthecardboard'><a >Secret Read the CardBoard MVP</a></Link></h3>
+        <h3>
+          <Link href="/timer">
+            <a>Check out my Timer</a>
+          </Link>
+        </h3>
+        <h3>
+          <Link href="/readthecardboard">
+            <a>Secret Read the CardBoard MVP</a>
+          </Link>
+        </h3>
         <br></br>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -31,11 +43,13 @@ export default function Home({allPostsData}) {
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              {title}
+              <Link href={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
               <br />
-              {id}
-              <br />
-              {date}
+              <small className={utilStyles.lightText}>
+                <Date dateString={date} />
+              </small>
             </li>
           ))}
         </ul>

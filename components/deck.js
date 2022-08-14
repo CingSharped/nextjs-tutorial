@@ -1,16 +1,29 @@
-export default function Deck({currentDeck}) {
+class Deck{
 
-    return (
-        <div>
-            {currentDeck.map((card) => {
-                return (
-                    <div className="deckStyling">
-                        <h1>{card.title}</h1>
-                        <p>{card.description}</p>
-                    </div>
-                );
-            }
-            )}
-        </div>
-    );
+    mainDeck = [];
+    sideDeck = [];
+    extraDeck = [];
+
+	constructor(deckName,deckCreator){
+    	this.deckName=deckName;
+      	this.deckCreator=deckCreator;
+    }
+    addToMainDeck(newCard){
+        this.mainDeck.push(newCard);
+    }
+    addToSideDeck(newCard){
+        this.sideDeck.push(newCard);
+    }
+    addToExtraDeck(newCard){
+        this.extraDeck.push(newCard);
+    }
+  	countMainDeck(){
+    	return this.mainDeck.length;
+    }
+    countSideDeck(){
+    	return this.sideDeck.length;
+    }
+    countExtraDeck(){
+    	return this.extraDeck.length;
+    }
 }
