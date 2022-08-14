@@ -31,11 +31,6 @@ export default function Home({allPostsData}) {
             <a>Check out my Timer</a>
           </Link>
         </h3>
-        <h3>
-          <Link href="/readthecardboard">
-            <a>Secret Read the CardBoard MVP</a>
-          </Link>
-        </h3>
         <br></br>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
